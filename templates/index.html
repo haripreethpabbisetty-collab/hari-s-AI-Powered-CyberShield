@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield | AI Threat Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="topbar">
+        <div>
+            <div class="brand">CYBERSHIELD</div>
+            <div class="subtitle">AI-Powered Real-Time Threat Detection</div>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            LOCAL AI ENGINE ONLINE
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div>
+                <p class="eyebrow">REAL-TIME SECURITY ANALYSIS</p>
+
+                <h1>
+                    Detect phishing threats
+                    <span>before they reach you.</span>
+                </h1>
+
+                <p class="hero-text">
+                    CyberShield combines machine learning and
+                    explainable security rules to analyze suspicious URLs.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="scanner">
+
+            <div class="input-wrapper">
+
+                <input
+                    id="urlInput"
+                    type="text"
+                    placeholder="Enter a URL to scan..."
+                    autocomplete="off"
+                >
+
+                <button id="scanButton">
+                    SCAN URL
+                </button>
+
+            </div>
+
+            <div id="errorMessage" class="error"></div>
+
+        </section>
+
+
+        <section id="results" class="results hidden">
+
+            <!-- Risk -->
+            <div class="panel score-panel">
+
+                <div class="panel-title">
+                    THREAT ASSESSMENT
+                </div>
+
+                <div class="score-ring" id="scoreRing">
+
+                    <div>
+                        <strong id="riskScore">0</strong>
+                        <span>/100</span>
+                    </div>
+
+                </div>
+
+                <h2 id="riskLevel">WAITING</h2>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+            <!-- AI Analysis -->
+            <div class="panel">
+
+                <div class="panel-title">
+                    🤖 AI ANALYSIS
+                </div>
+
+                <div class="ai-grid">
+
+                    <div class="metric">
+                        <span>ML Prediction</span>
+                        <strong id="mlPrediction">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Phishing Probability</span>
+                        <strong id="phishingProbability">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Legitimate Probability</span>
+                        <strong id="legitimateProbability">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Rule Engine Score</span>
+                        <strong id="ruleScore">—</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Signals -->
+            <div class="panel">
+
+                <div class="panel-title">
+                    SECURITY SIGNALS
+                </div>
+
+                <ul id="signals"></ul>
+
+            </div>
+
+
+            <!-- Recommendation -->
+            <div class="panel">
+
+                <div class="panel-title">
+                    RECOMMENDATION
+                </div>
+
+                <p id="recommendation"></p>
+
+            </div>
+
+
+            <!-- Feature Snapshot -->
+            <div class="panel">
+
+                <div class="panel-title">
+                    FEATURE SNAPSHOT
+                </div>
+
+                <div id="features" class="feature-grid"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        CyberShield • AI-powered local threat analysis
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
